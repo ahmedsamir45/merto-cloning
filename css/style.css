@@ -1,0 +1,337 @@
+/* global  */
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+}
+*:focus{
+    outline: none;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* custom classes  */
+.flag-icon{
+    width: 20%;
+}
+.bg-grey{
+    background-color: rgb(235 238 240);
+}
+
+nav  form .dropdown {
+    border-right: 1px solid grey;
+}
+nav a{
+    color: black;
+}
+.navbar{
+    padding: 15px 80px;
+    
+}
+nav{
+    border-bottom: 1px solid grey ;
+}
+
+nav img{
+    width: 128px;
+}
+nav div a:hover,nav div button nav > button:hover{
+    color: red;
+}
+.note{
+    background-color: red;
+    color: white;
+    padding: 4px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 23px;
+}
+.notification{
+    position: relative;
+}
+nav .dropdown-menu{
+    margin-top: 63px !important;
+}
+header  a:hover{
+    color: red;
+}
+
+header .dropdown-toggle {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+
+
+  /* Show dropdown on hover */
+  header .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+
+
+  /* Optional: smooth hover effect */
+  header .dropdown-menu {
+    transition: all 0.3s ease;
+  }
+
+
+
+  .banner-bg img:hover {
+    scale: 1.1;
+    transition: all 0.3s ease;
+  }
+  .text-content {
+    left: 4%;
+  }
+
+  .carousel-item{
+    height: 100% !important;
+  }
+
+  .btn-custom-border {
+    border-top: 1px solid white !important;
+    border-right: 1px solid white !important;
+    border-bottom: 1px solid white !important;
+    border-left: none;
+  }
+  .placeholder-white::placeholder {
+    color: white !important;
+    opacity: 1;
+  }
+.img-wrapper::before {
+  font-family: "Font Awesome 6 Free"; 
+  content: "\f061"; /* Correct unicode with backslash */
+  font-weight: 900;  /* Needed for solid icons */
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    font-size: 30px;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(49, 49, 49, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+.img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+a:hover .img-wrapper::before {
+  opacity: 0.5;
+}
+
+.img-wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.img-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.owl-item {
+  padding: 0 !important;
+  margin: 0 !important;
+  
+}
+/* 👇 Base card setup */
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 👇 Hover icons start hidden above top-right, slide in on hover */
+.product-card .hover-icons {
+  position: absolute;
+  top: -50px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/* 👇 Show icons on hover */
+.product-card:hover .hover-icons {
+  opacity: 1;
+  top: 10px;
+}
+
+/* 👇 Product image */
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* 👇 Discount badge fix */
+.product-card .discount-badge {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  z-index: 20;
+  background-color: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  
+}
+
+/* 👇 Owl nav square arrows */
+#product-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 8px;
+}
+
+#product-carousel .owl-nav button {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: all;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+   position: absolute;
+}
+#product-carousel .owl-nav .owl-prev{
+  left: 0;
+}
+#product-carousel .owl-nav .owl-next{
+  right: 0;
+}
+
+#product-carousel .owl-nav button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.sales > div > div:hover img{
+  transform: scale(1.1);
+  transition: all .5s;
+}
+
+.sale-card {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.sale-card img {
+  transition: transform 0.5s ease;
+}
+
+.sale-card:hover img {
+  transform: scale(1.3);
+}
+
+.sale-text {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.nav-link{
+  color: black;
+}
+.nav-pills .active{
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  color: black !important;
+}
+
+
+
+.sale-text.center-text {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.product-card img {
+  transition: none !important;
+}
+
+/* Animate height smoothly */
+.product-card {
+  transition: all 0.3s ease;
+  min-height: 200px;
+}
+  .list-group-item {
+    border: none;
+    font-weight: 500;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  .list-group-item i {
+    font-size: 1.2rem;
+  }
+/* On hover: show hidden content */
+.product-card:hover .product-shown,
+.product-card:hover .action-icons {
+  display: flex !important;
+
+}
+.product-card{
+  margin: 0;
+}
+.card-bottom:hover {
+  z-index: 333;
+  margin: 0;
+}
+/* Optional: add smooth pop */
+.action-icons,
+.product-shown {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.product-card:hover .action-icons,
+.product-card:hover .product-shown {
+  opacity: 1;
+}
