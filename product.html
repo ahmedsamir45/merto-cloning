@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" href="imgs/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .sidebar {
+            width: 10%;
+            padding: 10px;
+        }
+        .sidebar img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .main-image {
+            width: 50%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .main-image img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.1s ease;
+            transform-origin: center center;
+            cursor: zoom-in;
+        }
+        .product-details {
+            width: 30%;
+            padding: 10px;
+        }
+        .product-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .product-details .rating {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .product-details .features ul {
+            list-style: none;
+            padding: 0;
+            color: #28a745;
+        }
+        .product-details .price {
+            font-size: 1.5em;
+            color: #000;
+            margin: 10px 0;
+        }
+        .product-details .stock {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .product-details .quantity {
+            margin: 10px 0;
+        }
+        .product-details .quantity input {
+            width: 50px;
+            text-align: center;
+            margin: 0 5px;
+        }
+        .product-details .buttons .add-to-cart {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+        .product-details .buttons .buy-now {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+        }
+        .product-details .links a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .product-details .sku, .product-details .categories {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+      
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo.png" class="img-fluid" alt="Logo">
+            </a>
+            <a class="contact d-md-flex d-none align-items-center me-4" href="#">
+                <i class="fa-solid fa-phone me-2 fs-3"></i>
+                <span>
+                    <p class="mb-0">contact us 24/7</p>
+                    <p class="mb-0">(+92) 3942 7879</p>
+                </span>
+            </a>
+            <form class="d-md-flex d-none align-items-center p-3 me-4 bg-grey">
+                <div class="dropdown me-2">
+                    <button class="bg-grey dropdown-toggle mx-1 px-1 border-0" type="button" data-bs-toggle="dropdown">
+                        all categories
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                </div>
+                <div class="input-group bg-grey">
+                    <input type="text" class="bg-grey border-0" placeholder="search for product">
+                    <button class="btn btn-dark" type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="d-flex align-items-center gap-2">
+                <a href="#" class="fs-5 d-flex align-items-center">
+                    <i class="fa-regular fa-user px-1 fs-5"></i>
+                    <span class="d-none d-md-block">account</span>
+                </a>
+                <div class="notification">
+                    <span class="note">6</span>
+                    <a href="#"><i class="fa-regular fa-heart fs-4 px-1"></i></a>
+                </div>
+                <div class="notification">
+                    <span class="note">4</span>
+                    <a href="#"><i class="fa-solid fa-cart-shopping fs-4 px-1"></i></a>
+                </div>
+                <button id="burgerToggle" class="border-0 bg-transparent ms-2" style="display:none;">
+                    <i class="fa-solid fa-bars text-black fs-3"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="navbar navbar-expand-lg m-0 py-3 d-none d-md-block bg-light">
+        <div class="container-fluid row justify-content-start gap-2 align-items-center">
+            <a class="border-end w-auto col-2 border-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <i class="fa-solid fa-bars"></i> Shop by Categories
+            </a>
+            <div class="dropdowns-container col-8 d-flex align-items-center justify-content-start gap-4">
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        HomePages
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pages
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                <a href="#">About Us</a>
+                <a href="#">blog</a>
+                <a href="#">best discount</a>
+            </div>
+            <div class="dropdown col-2">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Recently viewed
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header bg-black text-white">
+            <h5 class="offcanvas-title">SHOP BY CATEGORIES</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-shirt me-3"></i> Fashion</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-mobile-screen-button me-3"></i> Phone & Tablet</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-laptop me-3"></i> Laptop & Computer</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-tv me-3"></i> TV, Audio – Video</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-camera me-3"></i> Camera & Photo</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-couch me-3"></i> Home & Decor</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-heart-pulse me-3"></i> Beauty & Health</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-gamepad me-3"></i> Game Accessories</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div><i class="fa-solid fa-gear me-3"></i> Autopart</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+
+<div aria-label="breadcrumb">
+  <div class="container text-dark py-2">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+      <li class="breadcrumb-item"><a href="#">Women</a></li>
+      <li class="breadcrumb-item"><a href="#">Shorts</a></li>
+      <li class="breadcrumb-item active text-secondary" aria-current="page">Barbie Baseball Hat Cap Berkshire Fashions New</li>
+    </ol>
+  </div>
+</div>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <img src="imgs/product1.png" alt="Product 1" data-product="1">
+            <img src="imgs/product2.png" alt="Product 2" data-product="2">
+            <img src="imgs/product3.png" alt="Product 3" data-product="3">
+            <img src="imgs/product4.png" alt="Product 4" data-product="4">
+        </div>
+        <div class="main-image zoom-container">
+            <img src="imgs/product1.png" alt="Barbie Baseball Hat" id="zoom-img">
+        </div>
+        <div class="product-details">
+            <h2 id="productTitle">Barbie Baseball Hat Cap Berkshire Fashions New</h2>
+            <div class="rating">★★★★★ (0 Reviews) <a href="#">Write a review</a></div>
+            <div class="features">
+                <ul id="productFeatures">
+                    <li>Unique Design</li>
+                    <li>Premium Material</li>
+                    <li>Classic & Versatile</li>
+                </ul>
+            </div>
+            <div class="price" id="productPrice">$12</div>
+            <div class="stock">In stock</div>
+            <div class="quantity">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <div class="buttons">
+                <button class="btn add-to-cart rounded m-2">+ ADD TO CART</button>
+                <button class="buy-now m-2 rounded">BUY NOW</button>
+            </div>
+            <div class="links">
+                <a href="#">Add to wishlist</a>
+                <a href="#">Add to compare</a>
+            </div>
+            <div class="sku" id="productSku">SKU: KGT48CB2S</div>
+            <div class="categories" id="productCategories">Categories: Shorts, Skirts</div>
+        </div>
+    </div>
+
+
+
+    <script src="js/global.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const quantityInput = document.querySelector('.quantity input');
+        const decreaseBtn = document.querySelector('.quantity button:first-child');
+        const increaseBtn = document.querySelector('.quantity button:last-child');
+
+        decreaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) quantityInput.value = value - 1;
+        });
+
+        increaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            quantityInput.value = value + 1;
+        });
+
+        const sidebarImages = document.querySelectorAll('.sidebar img');
+        const productDetails = {
+            1: {
+                title: "Barbie Baseball Hat Cap Berkshire Fashions New",
+                features: ["Unique Design", "Premium Material", "Classic & Versatile"],
+                price: "$12",
+                sku: "KGT48CB2S",
+                categories: "Categories: Shorts, Skirts"
+            },
+            2: {
+                title: "Product 2 Name",
+                features: ["Feature A", "Feature B", "Feature C"],
+                price: "$15",
+                sku: "PRD2SKU123",
+                categories: "Categories: Hats, Accessories"
+            },
+            3: {
+                title: "Product 3 Name",
+                features: ["Feature X", "Feature Y", "Feature Z"],
+                price: "$18",
+                sku: "PRD3SKU456",
+                categories: "Categories: Clothing, Bags"
+            },
+            4: {
+                title: "Product 4 Name",
+                features: ["Feature 1", "Feature 2", "Feature 3"],
+                price: "$20",
+                sku: "PRD4SKU789",
+                categories: "Categories: Shoes, Jewelry"
+            }
+        };
+
+        sidebarImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const productId = img.getAttribute('data-product');
+                document.getElementById('zoom-img').src = `imgs/product${productId}.png`;
+                document.getElementById('productTitle').textContent = productDetails[productId].title;
+                document.getElementById('productFeatures').innerHTML = productDetails[productId].features.map(feature => `<li>${feature}</li>`).join('');
+                document.getElementById('productPrice').textContent = productDetails[productId].price;
+                document.getElementById('productSku').textContent = productDetails[productId].sku;
+                document.getElementById('productCategories').textContent = productDetails[productId].categories;
+            });
+        });
+
+        const zoomImg = document.getElementById('zoom-img');
+        const zoomContainer = document.querySelector('.zoom-container');
+        const zoomLevel = 2;
+
+        zoomContainer.addEventListener('mousemove', (e) => {
+            const rect = zoomContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const percentX = (x / rect.width) * 100;
+            const percentY = (y / rect.height) * 100;
+            zoomImg.style.transformOrigin = `${percentX}% ${percentY}%`;
+            zoomImg.style.transform = `scale(${zoomLevel})`;
+        });
+
+        zoomContainer.addEventListener('mouseleave', () => {
+            zoomImg.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

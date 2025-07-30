@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/all.min.css">
@@ -53,73 +54,61 @@
 
 
 
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
+    <!-- Left: Logo -->
     <a class="navbar-brand" href="#">
-      <img src="imgs/logo.png" class="img-fluid"  alt="">
+      <img src="imgs/logo.png" class="img-fluid" alt="Logo">
     </a>
+
+    <!-- Center: Contact -->
     <a class="contact d-md-flex d-none align-items-center me-4" href="#">
       <i class="fa-solid fa-phone me-2 fs-3"></i>
-      <span class="">
+      <span>
         <p class="mb-0">contact us 24/7</p>
         <p class="mb-0">(+92) 3942 7879</p>
       </span>
     </a>
-    <form class="d-md-flex d-none  align-items-center p-3 me-4 bg-grey">
+
+    <!-- Search Bar -->
+    <form class="d-md-flex d-none align-items-center p-3 me-4 bg-grey">
       <div class="dropdown me-2">
-        <button class=" bg-grey dropdown-toggle mx-1 px-1" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="bg-grey dropdown-toggle mx-1 px-1 border-0" type="button" data-bs-toggle="dropdown">
           all categories
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
       <div class="input-group bg-grey">
-        <input type="text" class="bg-grey" placeholder="search for product">
+        <input type="text" class="bg-grey border-0" placeholder="search for product">
         <button class="btn btn-dark" type="button">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
     </form>
-    <div class="d-flex align-items-center gap-2">
-      <div class="d-none d-md-flex">
-              <div class="dropdown me-2">
-        <a class=" dropdown-toggle w-auto" href="#" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="imgs/englishflag.png" class="flag-icon me-2" style="height: 20px;" alt=""> english
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown me-2">
-        <a class="dropdown-toggle" href="#" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      </div>
 
-      <a href="#" class="fs-5 d-flex align-items-center"><i class="fa-regular fa-user px-1 fs-5"></i> <span class="d-none d-md-block">account</span></a>
+    <!-- Right: Account, Wishlist, Cart -->
+    <div class="d-flex align-items-center gap-2">
+      <a href="#" class="fs-5 d-flex align-items-center"><i class="fa-regular fa-user px-1 fs-5"></i><span class="d-none d-md-block">account</span></a>
       <div class="notification">
         <span class="note">6</span>
-        <a href="#" class=""><i class="fa-regular fa-heart fs-4 px-1"></i></a>
+        <a href="#"><i class="fa-regular fa-heart fs-4 px-1"></i></a>
       </div>
       <div class="notification">
         <span class="note">4</span>
-        <a href="#" class=""><i class="fa-solid fa-cart-shopping px-1 fs-4"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping fs-4 px-1"></i></a>
       </div>
+
+      <!-- Burger Icon -->
+      <button id="burgerToggle" class="border-0 bg-transparent ms-2" style="display:none;">
+        <i class="fa-solid fa-bars text-black fs-3"></i>
+      </button>
     </div>
   </div>
 </nav>
-<header class="navbar navbar-expand-lg m-0 py-3 d-none d-md-block">
+<header class="navbar navbar-expand-lg m-0 py-3 d-none d-md-block bg-light">
 <div class="container-fluid row justify-content-start gap-2 align-items-center">
   
   <a class="border-end w-auto col-2  border-dark " data-bs-toggle="offcanvas"  href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -246,7 +235,7 @@
 
 
 
-<div class="landing">
+<div class="landing" >
   <div class="container-fluid">
     <div class="row " >
   <div class="col-12 col-md-8 p-0" style="height: 80vh; background-color:black">
@@ -1444,7 +1433,50 @@
   </div>
 </div>
 
-
+    <div class="container py-5">
+        <div class="row">
+            <!-- Product Images Column -->
+            <div class="col-lg-8">
+                <div class="product-image-container mb-3">
+                    <img id="mainProductImage" src="imgs/hodi1.png" class="main-product-image" alt="Hoodie">
+                    <div class="discount-badge">-30%</div>
+                </div>
+                
+           
+            </div>
+            
+            <!-- Product Details Column -->
+            <div class="col-lg-4">
+                <h1 class="mb-3">Athletics Embroidered Relaxed Hoodie</h1>
+                
+                <ul class="product-features mb-4">
+                    <li>64% cotton, 36% polyester</li>
+                    <li>Do not dry clean</li>
+                    <li>Machine wash</li>
+                </ul>
+                
+                <div class="mb-4">
+                    <span class="current-price text-danger">$89</span>
+                    <span class="original-price ms-2">$120</span>
+                </div>
+                     <div class="options-container my-3 d-flex justify-content-center">
+                    <div class="image-option active" onclick="changeMainImage('imgs/hodi1.png', this)">
+                        <img src="imgs/hodi1.png" alt="Hoodie Front">
+                    </div>
+                    <div class="image-option" onclick="changeMainImage('imgs/hodi2.png', this)">
+                        <img src="imgs/hodi2.png" alt="Hoodie Back">
+                    </div>
+                    <div class="image-option" onclick="changeMainImage('imgs/hodi3.png', this)">
+                        <img src="imgs/hodi3.png" alt="Hoodie Detail">
+                    </div>
+                    <div class="image-option" onclick="changeMainImage('imgs/hodi4.png', this)">
+                        <img src="imgs/hodi4.png" alt="Hoodie Side">
+                    </div>
+                </div>
+                <button class="btn btn-dark btn-lg w-100 py-3">BUY NOW</button>
+            </div>
+        </div>
+    </div>
 
 <footer class="bg-dark text-light py-5">
   <div class="container">
